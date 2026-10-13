@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSignal | Scam warning guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Pause before you tap</p>
+      <h1>SafeSignal</h1>
+      <p class="hero-text">A quick guide to help you spot warning signs in messages, links, and payment requests.</p>
+    </section>
+
+    <section class="card" aria-labelledby="type-heading">
+      <div class="section-heading">
+        <span class="step">1</span>
+        <div>
+          <p class="eyebrow">Start here</p>
+          <h2 id="type-heading">What are you checking?</h2>
+        </div>
+      </div>
+      <div class="type-options" role="radiogroup" aria-label="Message type">
+        <button class="type-option selected" type="button" data-type="SMS" aria-pressed="true">
+          <span class="type-icon">▣</span>
+          <span>SMS</span>
+        </button>
+        <button class="type-option" type="button" data-type="Suspicious link" aria-pressed="false">
+          <span class="type-icon">↗</span>
+          <span>Suspicious link</span>
+        </button>
+        <button class="type-option" type="button" data-type="Payment request" aria-pressed="false">
+          <span class="type-icon">₹</span>
+          <span>Payment request</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="questions-heading">
+      <div class="section-heading">
+        <span class="step">2</span>
+        <div>
+          <p class="eyebrow">Look for red flags</p>
+          <h2 id="questions-heading">Answer a few questions</h2>
+        </div>
+      </div>
+      <p class="helper-text">Choose Yes or No for each question. There are no wrong answers.</p>
+      <form id="risk-form">
+        <fieldset class="question">
+          <legend>Does it create urgency or pressure you to act now?</legend>
+          <div class="answer-options">
+            <label><input type="radio" name="urgent" value="yes"><span>Yes</span></label>
+            <label><input type="radio" name="urgent" value="no"><span>No</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="question">
+          <legend>Does it include a link you do not recognize?</legend>
+          <div class="answer-options">
+            <label><input type="radio" name="unknownLink" value="yes"><span>Yes</span></label>
+            <label><input type="radio" name="unknownLink" value="no"><span>No</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="question">
+          <legend>Does it ask for an OTP, password, PIN, or other secret?</legend>
+          <div class="answer-options">
+            <label><input type="radio" name="secret" value="yes"><span>Yes</span></label>
+            <label><input type="radio" name="secret" value="no"><span>No</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="question">
+          <legend>Does it ask you to send money or make a payment?</legend>
+          <div class="answer-options">
+            <label><input type="radio" name="money" value="yes"><span>Yes</span></label>
+            <label><input type="radio" name="money" value="no"><span>No</span></label>
+          </div>
+        </fieldset>
+        <p class="form-error" id="form-error" role="alert" hidden>Please answer every question to see your result.</p>
+        <button class="primary-button" type="submit">Check risk</button>
+      </form>
+    </section>
+
+    <section class="result-card" id="result" aria-live="polite" hidden>
+      <div class="result-topline">
+        <p class="eyebrow">Your result</p>
+        <span class="risk-badge" id="risk-badge"></span>
+      </div>
+      <h2 id="result-title"></h2>
+      <p id="result-explanation"></p>
+      <div class="tips-box">
+        <h3>What you can do</h3>
+        <ul id="tips-list"></ul>
+      </div>
+      <button class="secondary-button" id="reset-button" type="button">Start again</button>
+    </section>
+
+    <footer class="disclaimer">
+      <strong>Important:</strong> SafeSignal provides general guidance, not guaranteed scam detection. When in doubt, stop and verify through an official channel you find yourself.
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
